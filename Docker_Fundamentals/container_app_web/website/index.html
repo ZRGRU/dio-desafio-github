@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Quantum Leap Solutions - Impulsionando o Futuro</title>
+  
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    /* 
+    Paleta de Cores Fornecida
+    --color-0: #eb9740; (Laranja Vibrante)
+    --color-1: #e14c2e; (Vermelho-Laranja)
+    --color-2: #e6e6c5; (Branco Sujo/Bege)
+    --color-3: #1c4862; (Azul Escuro Secundário)
+    --color-4: #6e3124; (Marrom)
+    --color-5: #5793ac; (Azul Médio)
+    --color-6: #72a3ac; (Azul Claro)
+    --color-7: #467d8f; (Azul Esverdeado)
+    --color-8: #2c6b6a; (Verde-Azulado Escuro)
+    --color-9: #171b36; (Azul Super Escuro/Fundo)
+    */
+
+    :root {
+      --q-primary: #eb9740;
+      --q-primary-hover: #e14c2e;
+      --q-bg-dark: #171b36;
+      --q-bg-secondary: #1c4862;
+      --q-text-light: #e6e6c5;
+      --q-text-secondary: #72a3ac;
+      --q-border-color: #467d8f;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: var(--q-bg-dark);
+      color: var(--q-text-light);
+    }
+
+    /* --- Navbar --- */
+    .navbar {
+      background-color: rgba(23, 27, 54, 0.85); /* Fundo com transparência */
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--q-border-color);
+    }
+    .navbar-brand {
+      color: var(--q-primary);
+      font-weight: 700;
+      letter-spacing: 1px;
+    }
+    .navbar-brand:hover {
+      color: var(--q-primary-hover);
+    }
+    .nav-link {
+      color: var(--q-text-secondary);
+      font-weight: 400;
+      transition: color 0.3s ease;
+    }
+    .nav-link:hover, .nav-link.active {
+      color: var(--q-primary);
+    }
+    .navbar-toggler {
+      border-color: var(--q-text-secondary);
+    }
+    .navbar-toggler-icon {
+      background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(114, 163, 172, 1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+    }
+
+    /* --- Hero --- */
+    .hero {
+      padding: 120px 0;
+      background: linear-gradient(135deg, var(--q-bg-dark) 0%, var(--q-bg-secondary) 100%);
+    }
+    .hero h1 {
+      font-weight: 700;
+      color: var(--q-primary);
+    }
+    .hero .lead {
+      color: var(--q-text-secondary);
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    .btn-primary {
+      background-color: var(--q-primary);
+      border-color: var(--q-primary);
+      color: var(--q-bg-dark);
+      font-weight: 600;
+      padding: 12px 30px;
+      transition: all 0.3s ease;
+    }
+    .btn-primary:hover {
+      background-color: var(--q-primary-hover);
+      border-color: var(--q-primary-hover);
+      transform: translateY(-3px);
+      box-shadow: 0 4px 15px rgba(235, 151, 64, 0.2);
+    }
+
+    /* --- Seções --- */
+    .section-title {
+      color: var(--q-primary);
+      font-weight: 600;
+      margin-bottom: 50px;
+      position: relative;
+      padding-bottom: 10px;
+    }
+    .section-title::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 60px;
+      height: 3px;
+      background-color: var(--q-border-color);
+    }
+
+    /* --- Serviços --- */
+    #servicos .card {
+      background-color: var(--q-bg-secondary);
+      border: 1px solid var(--q-border-color);
+      border-radius: 8px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    #servicos .card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    }
+    #servicos .card-title {
+      color: var(--q-text-light);
+      font-weight: 600;
+    }
+    #servicos .card-text {
+      color: var(--q-text-secondary);
+    }
+    #servicos .card-icon {
+      font-size: 3rem;
+      color: var(--q-primary);
+      margin-bottom: 1rem;
+    }
+
+    /* --- Blog --- */
+    #blog {
+      background-color: var(--q-bg-dark);
+    }
+    #blog .card {
+      background-color: var(--q-bg-secondary);
+      border: 1px solid transparent;
+    }
+    #blog .card-title {
+      color: var(--q-text-light);
+    }
+    #blog .card-text {
+      color: var(--q-text-secondary);
+    }
+    .btn-outline-primary {
+      color: var(--q-primary);
+      border-color: var(--q-primary);
+    }
+    .btn-outline-primary:hover {
+      color: var(--q-bg-dark);
+      background-color: var(--q-primary);
+      border-color: var(--q-primary);
+    }
+
+    /* --- FAQ --- */
+    .accordion-item {
+      background-color: var(--q-bg-secondary);
+      border: 1px solid var(--q-border-color);
+      margin-bottom: 10px;
+      border-radius: 5px !important;
+    }
+    .accordion-button {
+      background-color: var(--q-bg-secondary);
+      color: var(--q-text-light);
+      font-weight: 600;
+    }
+    .accordion-button:not(.collapsed) {
+      background-color: var(--q-border-color);
+      color: var(--q-primary);
+      box-shadow: none;
+    }
+    .accordion-button:focus {
+      box-shadow: 0 0 0 0.25rem rgba(235, 151, 64, 0.25);
+    }
+    .accordion-body {
+      color: var(--q-text-secondary);
+    }
+    .accordion-button::after {
+      background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%2372a3ac'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+    }
+    .accordion-button:not(.collapsed)::after {
+      background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23eb9740'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+    }
+    
+    /* --- Contato --- */
+    #contato {
+      background-color: var(--q-bg-secondary);
+    }
+    .form-control {
+      background-color: var(--q-bg-dark);
+      border: 1px solid var(--q-border-color);
+      color: var(--q-text-light);
+    }
+    .form-control:focus {
+      background-color: var(--q-bg-dark);
+      border-color: var(--q-primary);
+      color: var(--q-text-light);
+      box-shadow: 0 0 0 0.25rem rgba(235, 151, 64, 0.25);
+    }
+    .form-label {
+      color: var(--q-text-secondary);
+    }
+
+    /* --- Footer --- */
+    footer {
+      background-color: var(--q-bg-dark);
+      border-top: 1px solid var(--q-border-color);
+      color: var(--q-text-secondary);
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg sticky-top">
+    <div class="container">
+      <a class="navbar-brand" href="#">
+        <i class="bi bi-bar-chart-line-fill"></i>
+        Quantum Leap Solutions
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="#servicos">Serviços</a></li>
+          <li class="nav-item"><a class="nav-link" href="#blog">Blog</a></li>
+          <li class="nav-item"><a class="nav-link" href="#faq">FAQ</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contato">Contato</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero text-center">
+    <div class="container">
+      <h1 class="display-3">Soluções Digitais Sob Medida para a Era da Inovação</h1>
+      <p class="lead mt-3 mb-4">Da concepção à implementação, criamos a tecnologia que posiciona sua empresa à frente da concorrência.</p>
+      <a href="#contato" class="btn btn-primary btn-lg">Descubra nossas soluções</a>
+    </div>
+  </section>
+
+  <!-- Serviços -->
+  <section id="servicos" class="py-5">
+    <div class="container">
+      <h2 class="text-center section-title">Nossos Serviços de Ponta</h2>
+      <div class="row text-center mt-5">
+        <div class="col-md-4 mb-4">
+          <div class="card p-4 h-100">
+            <div class="card-body">
+              <div class="card-icon"><i class="bi bi-code-slash"></i></div>
+              <h5 class="card-title">Desenvolvimento Full-Stack</h5>
+              <p class="card-text">Criamos aplicações web e mobile robustas, com interfaces intuitivas e back-ends escaláveis. Da ideia ao deploy, seu projeto em boas mãos.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 mb-4">
+          <div class="card p-4 h-100">
+            <div class="card-body">
+              <div class="card-icon"><i class="bi bi-cloud-upload"></i></div>
+              <h5 class="card-title">Cloud & DevOps</h5>
+              <p class="card-text">Otimizamos sua infraestrutura na nuvem para máxima performance e segurança. Automação (CI/CD) para entregas mais rápidas e confiáveis.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 mb-4">
+          <div class="card p-4 h-100">
+            <div class="card-body">
+              <div class="card-icon"><i class="bi bi-robot"></i></div>
+              <h5 class="card-title">Inteligência Artificial & Dados</h5>
+              <p class="card-text">Transformamos dados brutos em insights estratégicos. Implementamos soluções de IA para automatizar tarefas e prever tendências.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Blog -->
+  <section id="blog" class="py-5">
+    <div class="container">
+      <h2 class="text-center section-title">Insights do Nosso Laboratório</h2>
+      <div class="row">
+        <div class="col-md-4 mb-4">
+          <div class="card h-100 shadow-sm">
+            <div class="card-body d-flex flex-column">
+              <h5 class="card-title">O Metaverso é o Futuro ou Apenas Hype?</h5>
+              <p class="card-text flex-grow-1">Analisamos o potencial real do metaverso para negócios B2B e como sua empresa pode se preparar para essa nova fronteira digital.</p>
+              <a href="#" class="btn btn-outline-primary mt-auto align-self-start">Ler Análise</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 mb-4">
+          <div class="card h-100 shadow-sm">
+            <div class="card-body d-flex flex-column">
+              <h5 class="card-title">Computação Quântica para Leigos</h5>
+              <p class="card-text flex-grow-1">Desmistificamos os conceitos da computação quântica e exploramos seu impacto iminente na cibersegurança e na análise de dados complexos.</p>
+              <a href="#" class="btn btn-outline-primary mt-auto align-self-start">Desvendar Mistério</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 mb-4">
+          <div class="card h-100 shadow-sm">
+            <div class="card-body d-flex flex-column">
+              <h5 class="card-title">Design Centrado no Humano (HCD)</h5>
+              <p class="card-text flex-grow-1">Descubra por que colocar o usuário no centro do design não é apenas boa prática, mas um diferencial competitivo crucial para o sucesso.</p>
+              <a href="#" class="btn btn-outline-primary mt-auto align-self-start">Explorar Princípios</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" class="py-5">
+    <div class="container" style="max-width: 800px;">
+      <h2 class="text-center section-title">Desvendando Dúvidas</h2>
+      <div class="accordion mt-5" id="faqAccordion">
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="faq1">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1">
+              Qual a stack de tecnologia que vocês mais utilizam?
+            </button>
+          </h2>
+          <div id="collapse1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+            <div class="accordion-body">
+              Somos agnósticos, mas temos grande expertise em ecossistemas como Node.js/React/Vue para o front-end, e Python/Go/Rust para o back-end. Nossa infraestrutura preferencial é em AWS ou Google Cloud, utilizando Kubernetes para orquestração.
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="faq2">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2">
+              Como funciona o processo de onboarding de um novo projeto?
+            </button>
+          </h2>
+          <div id="collapse2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+            <div class="accordion-body">
+              Nosso processo é colaborativo. Iniciamos com uma imersão profunda no seu negócio (Discovery), seguida por sprints de design e desenvolvimento (Metodologia Ágil), com validações constantes para garantir alinhamento total com suas expectativas e objetivos de mercado.
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="faq3">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3">
+              Vocês trabalham com modelos de contrato flexíveis?
+            </button>
+          </h2>
+          <div id="collapse3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+            <div class="accordion-body">
+              Sim! Oferecemos modelos por escopo fechado, alocação de squads (time como serviço) ou pacotes de horas. Entendemos que cada projeto tem uma necessidade única e nos adaptamos para encontrar o melhor modelo de parceria.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contato -->
+  <section id="contato" class="py-5">
+    <div class="container" style="max-width: 800px;">
+      <h2 class="text-center section-title">Vamos Construir Algo Incrível Juntos?</h2>
+      <p class="text-center text-secondary mb-5">Preencha o formulário abaixo e nossa equipe de especialistas entrará em contato em até 24 horas.</p>
+      <form>
+        <div class="row">
+          <div class="col-md-6 mb-3">
+            <label for="nome" class="form-label">Seu Nome</label>
+            <input type="text" class="form-control" id="nome" placeholder="João da Silva" required>
+          </div>
+          <div class="col-md-6 mb-3">
+            <label for="email" class="form-label">Seu Melhor E-mail</label>
+            <input type="email" class="form-control" id="email" placeholder="joao.silva@empresa.com" required>
+          </div>
+        </div>
+        <div class="mb-3">
+          <label for="mensagem" class="form-label">Conte-nos sobre seu desafio</label>
+          <textarea class="form-control" id="mensagem" rows="5" placeholder="Estou buscando desenvolver um novo app para..." required></textarea>
+        </div>
+        <div class="text-center">
+          <button type="submit" class="btn btn-primary btn-lg mt-3">Enviar Proposta</button>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="text-center py-4">
+    <div class="container">
+      <p class="mb-0">© 2024 Quantum Leap Solutions. Inovação como padrão.</p>
+    </div>
+  </footer>
+  
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
