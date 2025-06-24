@@ -1,6 +1,6 @@
 #!/bin/bash
 
-LOG_FILE="master_config.log"
+LOG_FILE="/vagrant/master_config.log"
 
 {
 echo "--- Início do script em $(date) ---"

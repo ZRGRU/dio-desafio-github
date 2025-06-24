@@ -1,6 +1,6 @@
 #!/bin/bash
 
-LOG_FILE="volume_consistency_client.log"
+LOG_FILE="/vagrant/volume_consistency_client.log"
 
 {
 echo "--- Início do script em $(date) ---"

@@ -3,3 +3,6 @@
 
 # SSH
 .ssh
+
+# Log files
+*.log

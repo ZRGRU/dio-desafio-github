@@ -1,6 +1,6 @@
 #!/bin/bash
 
-LOG_FILE="docker_install.log"
+LOG_FILE="/vagrant/docker_install.log"
 
 {
 echo "--- Início do script em $(date) ---"
