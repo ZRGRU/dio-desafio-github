@@ -1,0 +1,8 @@
+# Vagrant
+.vagrant
+
+# SSH
+.ssh
+
+# Log files
+*.log
