@@ -1,9 +1,9 @@
 #!/bin/bash
 
-LOG_FILE="/vagrant/volume_consistency_client.log"
+LOG_FILE="/vagrant/vagrant_up.log"
 
-{
-echo "--- Início do script em $(date) ---"
+exec >> "$LOG_FILE" 2>&1
+echo "--- Início do script volume_consistency_client em $(date) ---"
 
 IP_SERVER="10.0.0.240" # IP do servidor NFS
 APP="my_web_app" # Nome do volume que será criado no Docker
@@ -28,4 +28,4 @@ showmount -e $IP_SERVER
 # Montar persistência
 mount $IP_SERVER:$WORK_DIR $WORK_DIR
 
-} >> "$LOG_FILE" 2>&1
+echo "--- Fim do script volume_consistency_client em $(date) ---"
