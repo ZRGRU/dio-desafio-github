@@ -6,6 +6,10 @@ Repositório para postagem dos desafios dos cursos, formações e bootcamps da p
 
 [Criando seu Primeiro Repositório no GitHub Para Compartilhar Seu Progresso](https://github.com/ZRGRU/dio-desafio-github)
 
-[Desafio GitHub Linux Fundamentals](https://github.com/ZRGRU/dio-desafio-github/tree/main/Linux_Fundamentals_IaC)
+[Desafio GitHub Linux Fundamentals](https://github.com/ZRGRU/dio-desafio-github/tree/main/linux-experience/linux-fundamentals)
 
-[Criando um Container de uma Aplicação WEB](https://github.com/ZRGRU/dio-desafio-github/tree/main/Docker_Fundamentals/container_app_web)
+[Docker: Utilização Prática no Cenário de Microsserviços](https://github.com/ZRGRU/dio-desafio-github/tree/main/linux-experience/toshiro-shibakita-microservices)
+
+[Criando um Container de uma Aplicação WEB](https://github.com/ZRGRU/dio-desafio-github/tree/main/docker-fundamentals/container-app-web)
+
+[Definição de um Cluster Swarm Local com o Vagrant](https://github.com/ZRGRU/dio-desafio-github/tree/main/docker-fundamentals/docker-cluster)
