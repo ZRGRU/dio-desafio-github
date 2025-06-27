@@ -1,6 +1,6 @@
 # Toshiro Shibakita - Micros serviços
 
-| <img src="https://avatars.githubusercontent.com/u/19753377?v=4" alt="Instructor Img" style="zoom:50%;" /> |
+| ![Instructor Img](https://avatars.githubusercontent.com/u/19753377?v=4) |
 | :----------------------------------------------------------: |
 |                     **Denilson Bonatti**                     |
 |              Instrutor - Digital Innovation One              |
